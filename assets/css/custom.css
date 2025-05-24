@@ -1,0 +1,1229 @@
+/* Enhanced Styling for Happy Kids School Website */
+
+/* Modern Color Scheme */
+:root {
+  --primary-color: #6a3de8;
+  --secondary-color: #53d3d1;
+  --gradient-primary: linear-gradient(135deg, #6a3de8 0%, #53d3d1 100%);
+  --accent-color: #ff9a8b;
+  --text-color: #444;
+  --light-text: #777;
+  --dark-bg: #2d2d42;
+  --light-bg: #f9f9f9;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(106, 61, 232, 0.1);
+  --shadow-hover: 0 15px 40px rgba(106, 61, 232, 0.2);
+  --border-radius: 16px;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Update Buttons */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #53d3d1 0%, #6a3de8 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.btn-primary:hover:before {
+  opacity: 1;
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: rgba(106, 61, 232, 0.1);
+}
+
+/* Hero Section Enhancement */
+.hero {
+  background: linear-gradient(135deg, #eef5ff 0%, #e4f1ff 100%);
+  padding-bottom: 120px;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,128L48,144C96,160,192,192,288,181.3C384,171,480,117,576,128C672,139,768,213,864,224C960,235,1056,181,1152,144C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-content h1 {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Image Styling */
+.main-hero-image {
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(106, 61, 232, 0.15);
+  transition: all 0.5s ease;
+  max-width: 90%;
+  height: auto;
+  object-fit: cover;
+  transform: translateY(0);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* About Section Enhancement */
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover .about-img {
+  transform: scale(1.02);
+}
+
+/* Program Cards Enhancement */
+.program-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-image img {
+  transform: scale(1.1);
+}
+
+.program-age {
+  background: var(--gradient-primary);
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(106, 61, 232, 0.2);
+}
+
+/* Gallery Enhancement */
+.gallery-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.gallery-item {
+  overflow: hidden;
+  height: 250px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+/* Team Member Enhancement */
+.member-image {
+  height: 280px;
+  overflow: hidden;
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-img {
+  transform: scale(1.05);
+}
+
+.member-social {
+  bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.team-member:hover .member-social {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Dividers */
+.section-divider {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+  margin-top: -80px;
+}
+
+.section-divider svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhance Feature Cards */
+.feature-card {
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-card:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 5px;
+  background: var(--gradient-primary);
+  z-index: -1;
+}
+
+.feature-icon {
+  background: var(--gradient-primary);
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+/* Enhanced Animations */
+@keyframes float-enhanced {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.shape.circle {
+  animation: float-enhanced 7s ease-in-out infinite;
+}
+
+/* Add highlighting to section headers */
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.section-header h2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 5px;
+  left: 0;
+  background-color: rgba(83, 211, 209, 0.3);
+  z-index: -1;
+}
+
+/* Mobile menu enhancements */
+.nav-links.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced mobile menu experience */
+@media (max-width: 768px) {
+  .mobile-menu {
+    background: var(--gradient-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(106, 61, 232, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu:active {
+    transform: scale(0.95);
+  }
+  .nav-links {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(106, 61, 232, 0.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    animation: slideDown 0.5s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .nav-links a.active:not(.btn-primary) {
+    transform: none;
+    background: var(--gradient-primary);
+    color: white;
+  }
+
+  .nav-links a.active:not(.btn-primary):after {
+    display: none;
+  }
+}
+
+/* Mobile responsive header improvements */
+@media (max-width: 992px) {
+  /* Simplify logo animations on mobile */
+  .logo:before,
+  .logo:after {
+    display: none;
+  }
+
+  .logo i.fa-child {
+    animation: none;
+  }
+
+  /* Improve mobile menu interaction */
+  .mobile-menu {
+    background: var(--gradient-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(106, 61, 232, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu:active {
+    transform: scale(0.95);
+  }
+
+  .nav-links {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(106, 61, 232, 0.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    animation: slideDown 0.5s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .nav-links a.active:not(.btn-primary) {
+    transform: none;
+    background: var(--gradient-primary);
+    color: white;
+  }
+
+  .nav-links a.active:not(.btn-primary):after {
+    display: none;
+  }
+
+  /* Disable header hover effects on mobile */
+  header:hover {
+    transform: none;
+  }
+
+  /* Simplify header scrolled state on mobile */
+  header.scrolled {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further simplification for smaller screens */
+  .logo h1 {
+    text-shadow: none;
+    letter-spacing: 0;
+  }
+
+  .mobile-menu {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Ensure text doesn't wrap */
+  .logo h1 {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ultra mobile optimizations */
+  .logo h1 {
+    font-family: "Poppins", sans-serif; /* Fallback to more readable font */
+  }
+
+  .mobile-menu {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Footer enhancement */
+.footer-logo h2 .highlight {
+  background: linear-gradient(135deg, #6a3de8 0%, #53d3d1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-icons a:hover {
+  background: var(--gradient-primary);
+  transform: translateY(-5px);
+}
+
+/* Enhanced Header Styling */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(106, 61, 232, 0.05);
+  transition: all 0.4s ease;
+  animation: headerSlideDown 0.6s ease forwards;
+}
+
+.logo {
+  position: relative;
+  overflow: visible;
+}
+
+.logo h1 {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 10px rgba(106, 61, 232, 0.1);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.logo h1 .highlight {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo i {
+  color: var(--accent-color);
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logo:before,
+.logo:after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(
+    circle,
+    rgba(106, 61, 232, 0.8) 0%,
+    rgba(106, 61, 232, 0) 70%
+  );
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.logo:before {
+  top: -5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.logo:after {
+  bottom: 0;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  animation: sparkle 3s ease-in-out 1.5s infinite;
+}
+
+/* Add child icon animation */
+.logo i.fa-child {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: childBounce 4s ease-in-out infinite;
+  color: var(--accent-color);
+}
+
+@keyframes childBounce {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.nav-links a {
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, background-color;
+}
+
+.nav-links a:not(.btn-primary):hover {
+  background: linear-gradient(
+    to right,
+    rgba(106, 61, 232, 0.08),
+    rgba(83, 211, 209, 0.08)
+  );
+}
+
+.nav-links a.active:not(.btn-primary) {
+  background: linear-gradient(
+    to right,
+    rgba(106, 61, 232, 0.12),
+    rgba(83, 211, 209, 0.12)
+  );
+  color: var(--primary-color);
+  font-weight: 700;
+  position: relative;
+  transform: translateY(-2px);
+}
+
+.nav-links a.active:not(.btn-primary):before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px rgba(106, 61, 232, 0.3);
+  opacity: 0;
+  animation: pulse 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.nav-links a:not(.btn-primary):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a.active:not(.btn-primary):after {
+  width: 30px;
+  animation: pulseIndicator 2s infinite;
+}
+
+/* Active menu item indicator animation */
+@keyframes pulseIndicator {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 61, 232, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(106, 61, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(106, 61, 232, 0);
+  }
+}
+
+/* Header scroll effect */
+header.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 5px 20px rgba(106, 61, 232, 0.1);
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(83, 211, 209, 0.2);
+  transform: translate3d(0, 0, 0);
+}
+
+header.scrolled .logo h1 {
+  font-size: 22px;
+}
+
+header.scrolled .nav-links a {
+  font-size: 14px;
+}
+
+header.scrolled .nav-links a.btn-primary {
+  padding: 10px 20px;
+}
+
+/* Enhanced header glow effect on scroll */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+header.scrolled:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(106, 61, 232, 0),
+    rgba(106, 61, 232, 0.5),
+    rgba(83, 211, 209, 0.5),
+    rgba(83, 211, 209, 0),
+    rgba(106, 61, 232, 0)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+/* Image hover effects */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(106, 61, 232, 0.2),
+    rgba(83, 211, 209, 0.4)
+  );
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.gallery-item.loaded {
+  animation: fadeIn 1s ease;
+}
+
+/* Glow effect for elements */
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transform: translate(-100%, -100%);
+  transition: opacity 0.5s, transform 0.5s;
+  pointer-events: none;
+}
+
+.glow-effect:hover::before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Form enhancement */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.form-error {
+  color: #ff4757;
+  font-size: 13px;
+  margin-top: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-success {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: rgba(83, 211, 209, 0.1);
+  border-left: 4px solid var(--secondary-color);
+  color: var(--dark-bg);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  animation: slideIn 0.5s ease;
+  transition: opacity 0.3s ease;
+}
+
+.form-success i {
+  margin-right: 10px;
+  color: var(--secondary-color);
+}
+
+.newsletter-success {
+  margin-top: 15px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease;
+  transition: opacity 0.3s ease;
+}
+
+.newsletter-success i {
+  margin-right: 8px;
+}
+
+/* Image loading error styles */
+.image-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+}
+
+.image-error i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* Decoration elements */
+.decoration-dots {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dots-1 {
+  top: 20%;
+  left: 3%;
+  background-image: radial-gradient(var(--primary-color) 2px, transparent 2px);
+  background-size: 18px 18px;
+}
+
+.dots-2 {
+  bottom: 15%;
+  right: 5%;
+  background-image: radial-gradient(
+    var(--secondary-color) 2px,
+    transparent 2px
+  );
+  background-size: 18px 18px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f7fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 6px;
+  border: 3px solid #f5f7fa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Header animation on load */
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header {
+  animation: headerSlideDown 0.6s ease forwards;
+}
+
+.nav-links li {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.nav-links li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nav-links li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav-links li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nav-links li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nav-links li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.nav-links li:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.nav-links li:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.nav-links li:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.nav-links li:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated section highlighting when in view */
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0.7;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.section-in-view {
+  animation: sectionFadeIn 0.8s ease forwards;
+  position: relative;
+}
+
+section.section-in-view:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  animation: sectionIndicator 1s ease forwards 0.2s;
+  border-radius: 4px;
+}
+
+@keyframes sectionIndicator {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100px;
+  }
+}
+
+section.section-in-view .section-header h2 {
+  transform: scale(1.03);
+  transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Add hover animation for header to make it more interactive */
+header:hover {
+  transform: translateY(2px);
+}
+
+/* Add focus styling for accessibility */
+.nav-links a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106, 61, 232, 0.5);
+  border-radius: 8px;
+}
+
+/* Add a special effect for the Contact Us button */
+.nav-links a.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a.btn-primary:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.nav-links a.btn-primary:hover:before {
+  opacity: 1;
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Add subtle indicator for sections when in viewport */
+section {
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+/* Custom header effect when interacting with the page */
+.header-interaction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+header:hover .header-interaction {
+  width: 100%;
+}
+
+/* Enhanced Header Interaction Feedback */
+.nav-links a:not(.btn-primary) {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a:not(.btn-primary):before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(106, 61, 232, 0.1),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.nav-links a:not(.btn-primary):hover:before {
+  left: 100%;
+}
+
+/* Improved Mobile Menu Touch Feedback */
+@media (max-width: 992px) {
+  .mobile-menu {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mobile-menu::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+
+  .mobile-menu:active::before {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Improve nav link touch targets on mobile */
+  .nav-links a {
+    min-height: 44px; /* Apple recommended touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Ensure header doesn't interfere with page content */
+body {
+  margin-top: 0;
+}
+
+main,
+.hero {
+  margin-top: 0;
+}
+
+/* Add subtle loading animation for the header */
+@keyframes headerLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  animation: headerLoad 0.8s ease-out;
+}
+
+/* Performance Optimizations for Header */
+/* Use transform3d to enable hardware acceleration */
+.nav-links a {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, background-color;
+}
+
+.logo {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Optimize animations for better performance */
+header.scrolled {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .logo:before,
+  .logo:after,
+  .logo i.fa-child {
+    animation: none;
+  }
+
+  header {
+    animation: none;
+  }
+
+  .nav-links li {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .nav-links a:not(.btn-primary):before {
+    transition: none;
+  }
+
+  .mobile-menu::before {
+    transition: none;
+  }
+}
+
+/* Improve focus states for accessibility */
+.nav-links a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.mobile-menu:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  header {
+    border-bottom: 2px solid;
+  }
+
+  .nav-links a.active:not(.btn-primary) {
+    border: 2px solid;
+  }
+}
+
+/* Final header optimizations */
+/* Improve initial page load performance */
+header * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Optimize font loading for logo */
+.logo h1 {
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ensure consistent cross-browser rendering */
+.nav-links a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve button interaction feedback */
+.nav-links a.btn-primary {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mobile-menu {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Ensure smooth transitions on all properties */
+* {
+  box-sizing: border-box;
+}
+
+/* Fix any potential z-index issues */
+header {
+  isolation: isolate;
+}
+
+.nav-links {
+  isolation: isolate;
+}
