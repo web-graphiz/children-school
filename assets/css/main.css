@@ -583,22 +583,6 @@ a {
   position: relative;
 }
 
-.statistics .section-header h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-color),
-    var(--secondary-color)
-  );
-  border-radius: 2px;
-}
-
 .statistics .section-header p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
