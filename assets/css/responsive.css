@@ -292,6 +292,8 @@
 
   .logo h1 i {
     font-size: 1.2rem;
+    /* Reduce animation intensity on small screens */
+    animation-duration: 3s !important;
   }
 
   .mobile-menu {

@@ -163,6 +163,126 @@ a {
 .logo h1 i {
   color: var(--primary-color);
   font-size: 1.5rem;
+  animation: logoChildBounce 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+  transform-origin: center bottom;
+}
+
+.logo h1 i:hover {
+  animation: logoChildHover 0.6s ease-in-out infinite;
+  color: var(--primary-color);
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px var(--secondary-color));
+  text-shadow: 0 0 10px rgba(83, 211, 209, 0.5);
+}
+
+/* Logo Child Icon Animations */
+@keyframes logoChildBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+  60% {
+    transform: translateY(-4px) rotate(5deg);
+  }
+}
+
+@keyframes logoChildHover {
+  0%,
+  100% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.25) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.25) rotate(10deg);
+  }
+}
+
+/* Additional playful animation that triggers on page load */
+@keyframes logoChildWelcome {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Sparkle effect for special occasions */
+@keyframes logoChildSparkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 5px var(--primary-color));
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 0 10px var(--secondary-color));
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+    filter: drop-shadow(0 0 15px var(--accent-color));
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 10px var(--secondary-color));
+  }
+}
+
+/* Rainbow color cycling animation */
+@keyframes logoChildRainbow {
+  0% {
+    color: var(--primary-color);
+  }
+  16.66% {
+    color: #ff6b6b;
+  }
+  33.33% {
+    color: #feca57;
+  }
+  50% {
+    color: #48dbfb;
+  }
+  66.66% {
+    color: #ff9ff3;
+  }
+  83.33% {
+    color: var(--secondary-color);
+  }
+  100% {
+    color: var(--primary-color);
+  }
+}
+
+/* Apply welcome animation on page load */
+.logo h1 i.welcome-animation {
+  animation: logoChildWelcome 1.5s ease-out;
+}
+
+/* Special animation classes that can be triggered */
+.logo h1 i.sparkle-animation {
+  animation: logoChildSparkle 1.5s ease-in-out;
+}
+
+.logo h1 i.rainbow-animation {
+  animation: logoChildRainbow 3s ease-in-out infinite;
 }
 
 .nav {

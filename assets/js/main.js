@@ -16,6 +16,7 @@ class HappyKidsSchool {
     this.setupBackToTop();
     this.setupFormSubmission();
     this.setupScrollEffects();
+    this.setupLogoAnimation();
   } // ========================================
   // MOBILE MENU
   // ========================================
@@ -418,6 +419,120 @@ class HappyKidsSchool {
 
     // Check gallery animation on page load
     animateGalleryItems();
+  }
+
+  // ========================================
+  // LOGO ANIMATION
+  // ========================================
+  setupLogoAnimation() {
+    const logoIcon = document.querySelector(".logo h1 i");
+
+    if (logoIcon) {
+      // Add welcome animation on page load
+      logoIcon.classList.add("welcome-animation");
+
+      // Remove welcome animation after it completes
+      setTimeout(() => {
+        logoIcon.classList.remove("welcome-animation");
+      }, 1500);
+
+      // Add random bounce effect every 5-8 seconds
+      const randomBounce = () => {
+        if (!logoIcon.matches(":hover")) {
+          logoIcon.style.animation = "logoChildBounce 2s ease-in-out infinite";
+          setTimeout(() => {
+            logoIcon.style.animation = "";
+          }, 2000);
+        }
+
+        // Schedule next random bounce
+        const nextBounce = Math.random() * 3000 + 5000; // 5-8 seconds
+        setTimeout(randomBounce, nextBounce);
+      };
+
+      // Start random bounce cycle
+      setTimeout(randomBounce, 3000);
+
+      // Click counter for special effects
+      let clickCount = 0;
+
+      // Add click animation with special effects
+      logoIcon.addEventListener("click", () => {
+        clickCount++;
+
+        // Reset click count after 10 seconds of no clicks
+        clearTimeout(logoIcon.clickTimeout);
+        logoIcon.clickTimeout = setTimeout(() => {
+          clickCount = 0;
+        }, 10000);
+
+        // Different animations based on click count
+        if (clickCount === 1) {
+          logoIcon.style.animation = "logoChildWelcome 1s ease-out";
+        } else if (clickCount === 3) {
+          logoIcon.classList.add("sparkle-animation");
+          setTimeout(() => {
+            logoIcon.classList.remove("sparkle-animation");
+          }, 1500);
+        } else if (clickCount === 5) {
+          logoIcon.classList.add("rainbow-animation");
+          setTimeout(() => {
+            logoIcon.classList.remove("rainbow-animation");
+          }, 3000);
+        } else if (clickCount >= 7) {
+          // Easter egg: party mode!
+          this.triggerPartyMode(logoIcon);
+          clickCount = 0;
+        }
+
+        // Clear single animation after completion
+        setTimeout(() => {
+          logoIcon.style.animation = "";
+        }, 1000);
+      });
+
+      // Add double-click for instant sparkle
+      logoIcon.addEventListener("dblclick", () => {
+        logoIcon.classList.add("sparkle-animation");
+        setTimeout(() => {
+          logoIcon.classList.remove("sparkle-animation");
+        }, 1500);
+      });
+
+      // Add context menu (right-click) for rainbow mode
+      logoIcon.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        logoIcon.classList.add("rainbow-animation");
+        setTimeout(() => {
+          logoIcon.classList.remove("rainbow-animation");
+        }, 3000);
+      });
+    }
+  }
+
+  // Party mode easter egg
+  triggerPartyMode(logoIcon) {
+    // Show fun notification
+    this.showNotification("🎉 Party Mode Activated! 🎉", "success");
+
+    // Rapid animation cycle
+    const animations = [
+      "logoChildBounce",
+      "logoChildSparkle",
+      "logoChildRainbow",
+    ];
+    let currentAnimation = 0;
+
+    const partyInterval = setInterval(() => {
+      logoIcon.style.animation = `${animations[currentAnimation]} 0.5s ease-in-out infinite`;
+      currentAnimation = (currentAnimation + 1) % animations.length;
+    }, 500);
+
+    // Stop party mode after 3 seconds
+    setTimeout(() => {
+      clearInterval(partyInterval);
+      logoIcon.style.animation = "";
+    }, 3000);
   }
 
   // ========================================
