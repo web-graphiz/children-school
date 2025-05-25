@@ -230,7 +230,6 @@ class HappyKidsSchool {
   setupStatsCounter() {
     const statCounts = document.querySelectorAll(".stat-count");
     let hasAnimated = false;
-
     const animateCounter = (element) => {
       const target = parseInt(element.getAttribute("data-target"));
       const duration = 2000; // 2 seconds
@@ -243,6 +242,9 @@ class HappyKidsSchool {
         if (current >= target) {
           current = target;
           clearInterval(timer);
+          element.classList.remove("counting");
+        } else {
+          element.classList.add("counting");
         }
         element.textContent = Math.floor(current);
       }, duration / steps);
