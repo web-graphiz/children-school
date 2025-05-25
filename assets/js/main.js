@@ -337,7 +337,6 @@ class HappyKidsSchool {
       });
     }
   }
-
   // ========================================
   // SCROLL EFFECTS
   // ========================================
@@ -354,12 +353,46 @@ class HappyKidsSchool {
       });
     }
 
+    // Gallery items animation on scroll
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    let galleryAnimated = false;
+
+    const animateGalleryItems = () => {
+      if (galleryAnimated) return;
+
+      const gallerySection = document.querySelector(".gallery");
+      if (!gallerySection) return;
+
+      const rect = gallerySection.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+
+      if (isInView) {
+        galleryAnimated = true;
+        galleryItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }, index * 150); // Stagger animation
+        });
+      }
+    };
+
+    // Set initial state for gallery items
+    galleryItems.forEach((item) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(30px)";
+      item.style.transition = "all 0.6s ease-out";
+    });
+
     // Update active navigation link
     const navLinks = document.querySelectorAll(".nav-links a");
     const sections = document.querySelectorAll("section[id]");
 
     window.addEventListener("scroll", () => {
       let current = "";
+
+      // Animate gallery on scroll
+      animateGalleryItems();
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 200;
@@ -380,6 +413,9 @@ class HappyKidsSchool {
         }
       });
     });
+
+    // Check gallery animation on page load
+    animateGalleryItems();
   }
 
   // ========================================
